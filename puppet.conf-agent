@@ -1,0 +1,6 @@
+[agent]
+server = bsdpuppet.my.domain
+pluginsync = true
+show_diff = true
+reports = log,foreman
+environment = production

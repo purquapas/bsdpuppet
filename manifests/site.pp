@@ -8,7 +8,8 @@ Package {
 }
 
 
-node 'freebsd-default' {
+class freebsd-default {
+
 	include motd
 	include sshd
 
@@ -31,7 +32,11 @@ node 'freebsd-default' {
 }
 
 
-node "bsdpuppetcl1.my.domain" inherits freebsd-default {
+
+node "bsdpuppetcl1.my.domain" {
+
+	include freebsd-default
+
 	cbsd::jail { 'jail1':
 		jname		=> 'jail1',
 		path		=> 'jails/jail1',
@@ -42,5 +47,7 @@ node "bsdpuppetcl1.my.domain" inherits freebsd-default {
 	}
 }
 
-node "bsdpuppetcl2.my.domain" inherits freebsd-default {}
+node "bsdpuppetcl2.my.domain" {
+	include freebsd-default
+}
 

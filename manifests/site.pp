@@ -1,4 +1,4 @@
-#import 'classes/*.pp'
+import 'classes/*.pp'
 filebucket { main: server => "bsdpuppet.my.domain" }
 File { backup => main }
 Exec { path => "/usr/bin:/usr/sbin/:/bin:/sbin" }
